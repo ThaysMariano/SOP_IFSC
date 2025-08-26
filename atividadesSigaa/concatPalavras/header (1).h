@@ -1,0 +1,1 @@
+void concatenar(char palavra1[], char palavra2[], char resultado[]);
