@@ -32,8 +32,8 @@ navios ou 2 se o usuário teve um número máximo de tiros ultrapassado
 
 //pontuacoes
 #define PONTUACAO_PORTA_AVIOES 10
-#define PONTUACAO_FRAGATA 2
-#define PONTUACAO_SUBMARINO 3
+#define PONTUACAO_FRAGATA 3
+#define PONTUACAO_SUBMARINO 5
 
 //quantidades
 #define QUANTIDADE_SUBAMRINOS 5
@@ -183,11 +183,12 @@ int Tiro()
     printf("Digite a coordenada X do tiro:");
     scanf("%d", &tiro_x );
     
-    if(tiro_y<TAM_MAT && tiro_y<TAM_MAT){
+    if(tiro_y<TAM_MAT && tiro_y>=0 && tiro_x<TAM_MAT && tiro_x>=0){
         
         // se acertar uma posicao ja testada
         if(ZonaDeGuerra[tiro_y][tiro_x] == ALVEJADA){
             printf("Posicao ja testada \n");
+            return 0;
         }else{
             //se acertar espaco livre
             if(ZonaDeGuerra[tiro_y][tiro_x] == LIVRE){
@@ -239,9 +240,9 @@ int main()
         situacao = Tiro();
     } while (situacao==0);
     
-    if(Tiro()==1){
+    if(situacao==1){
         printf("Você atingiu todos os navios, Parabéns! \n");
-    }else if(Tiro()==2){
+    }else if(situacao==2){
         printf("Que pena! Número máximo de tiros atingidos \n");
     }
     
