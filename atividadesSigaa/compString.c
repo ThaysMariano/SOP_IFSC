@@ -24,29 +24,25 @@ Strings diferentes
 
     
 
-int main(int argc, char *argv[])
-{
-    
+int main(int argc, char *argv[]){
     if(argc!=3){
-        printf("Insira duas palavras como argumento");
+        printf("Insira apenas duas palavras como argumento \n");
+        return 0;
     }
+    int resp;   
     
-    int resp;
-        
-        //se mudar o nmr de palavras, mas com 2 n precisaria
-    for (int i = 1; i < argc-1; i++) {
-        int cmp = strcmp(argv[i], argv[i+1]);
-        if(cmp==0){
-            resp = 0;
-        }else{
-            resp = 1;
-        }
-    }
+    int cmp = strcmp(argv[1], argv[2]);
     
-    if(resp==0){
-        printf("Sao strings iguais");
+    if(cmp==0){
+       resp = 0;
     }else{
-        printf("Sao strings diferentes");
+       resp = 1;
+    }
+
+    if(resp==0){
+        printf("São strings iguais \n");
+    }else{
+        printf("São strings diferentes \n");
     }
         
     return 0;

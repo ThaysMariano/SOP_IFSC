@@ -29,24 +29,24 @@ Regras:
 #include <stdlib.h>
 
     float calcular(char num1[], char *op, char num2[]){
-        float num10 = atoi(num1);
-        float num20 = atoi(num2);
+        float primeiroNum = atoi(num1);
+        float segundoNum = atoi(num2);
         float conta;
         switch(*op){
             case '+': 
-                conta = num10+num20;
+                conta = primeiroNum+segundoNum;
                 break;
             case '-':
-                conta = num10-num20;
+                conta = primeiroNum-segundoNum;
                 break;
             case '*':
-                conta = num10*num20;
+                conta = primeiroNum*segundoNum;
                 break;
             case '/':
-                conta=num10/num20;
+                conta=primeiroNum/segundoNum;
                 break;
             default:
-                printf("Insira um operador válido");
+                printf("Insira um operador válido \n");
                 break;
         }
         
@@ -62,12 +62,15 @@ int main(int argc, char *argv[])
     }
     
     if(atoi(argv[3])==0){
-        printf("Divisao por 0!");
+        printf("Divisão por 0! Digite novamente \n");
         return 0;
     }
     
-    
-   float resposta = calcular(argv[1], argv[2], argv[3]);
-   printf(" Resultado: %.2f \n", resposta);
-   return 0;
+
+     	float resposta = calcular(argv[1], argv[2], argv[3]);
+     	printf(" Resultado: %.2f \n", resposta);
+     
+     	return 0;
+     
+   
 }
