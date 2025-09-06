@@ -213,11 +213,22 @@ static int cmd_mkdir_(int argc, char *argv[]) {
 
 static int cmd_rmdir_(int argc, char *argv[]) {
     /* TODO: usar rmdir(argv[1]) */
-    (void)argc;
-    (void)argv;
-    fprintf(stderr, "rmdir: não implementado. uso: rmdir <nome>\n");
-    errno = ENOSYS;
-    return 2;
+    char *remove = argv[1];
+    
+    if(argv[1]==NULL){
+	errno = ENOSYS;
+	return 2;
+    }else{    
+	    if(rmdir(remove)==0){
+	    	printf("removeu \n");
+	    }else{
+	    	printf("nao foi possivel remover \n");
+	    }
+    }
+    
+    //fprintf(stderr, "rmdir: não implementado. uso: rmdir <nome>\n");
+    
+    
 }
 
 static int cmd_stat_(int argc, char *argv[]) {
