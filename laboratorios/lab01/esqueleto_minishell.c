@@ -140,7 +140,7 @@ static struct command commands[] = {
     {"cwd",   cmd_cwd,    "Imprime diretório atual"},
     {"cd",    cmd_cd,     "Muda diretório atual: cd <dir>"},
     {"mkdir", cmd_mkdir_, "Cria diretório: mkdir <nome> [modo_oct]"},
-    {"rmdir", cmd_rmdir_, "Remove diretório: rmdir <nome>"},
+    {"rmdir", cmd_rmdir_, "Remove diretório: rmdir <nome>"}, //FEITO
     {"stat",  cmd_stat_,  "Mostra estatísticas: stat <alvo>"},
     {"ls",    cmd_ls,     "Lista conteúdo do diretório atual"},
     {"exit",  NULL,       "Sai do minishell"}
