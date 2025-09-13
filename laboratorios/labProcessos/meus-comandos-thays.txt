@@ -1,0 +1,86 @@
+    1  echo "Exerc´ıcios realizados pelo aluno NOME_COMPLETO"
+    2  echo "Exerc´ıcios realizados pelo aluno THAYS MARIANO"
+    3  echo "exercicio 1"
+    4  gedit myyes.c
+    5  gcc myyes.c -o myyes
+    6  ./myyes > /dev/null &
+    7  echo "exercicio 2"
+    8  pgrep myyes
+    9  echo "exercicio 3"
+   10  ./myyes > /dev/null &
+   11  pgrep myyes
+   12  echo "exercicio 4"
+   13  pgrep myyes
+   14  ls -l /proc/6574/fd
+   15  ls -l /proc/6651/fd
+   16  ls -l /proc/6652/fd
+   17  ls -l /proc/6654/fd
+   18  cat /proc/6574/status | grep Vm
+   19  cat /proc/6654/status | grep Vm
+   20  ls -l /proc/6654/fd | grep socket
+   21  echo "exercicio 5"
+   22  lscpu
+   23  cat /proc/cpuinfo | grep "model name" | uniq
+   24  cat /proc/cpuinfo | grep "^processor"
+   25  echo "exercicio 6"
+   26  ./myyes > /dev/null &
+   27  htop
+   28  HTOP
+   29  htop
+   30  echo "exercicio 7"
+   31  pgrep myyes
+   32  taskset -cp 15189
+   33  taskset -cp 6654
+   34  taskset -cp 6651
+   35  taskset -cp 0 15189
+   36  taskset -cp 15189
+   37  htop
+   38  echo "exercicio 8"
+   39  gedit waitkey.c
+   40  gcc waitkey.c -o waitkey
+   41  ./waitkey
+   42  echo "exercicio 9"
+   43  htop
+   44  ./waitkey
+   45  echo "exercicio 10"
+   46  sleep 30 &
+   47  ps -o pid,ppid,comm | grep sleep
+   48  echo $$
+   49  pstree -p
+   50  sleep 30 &
+   51  pstree -p
+   52  gedit pid.c
+   53  gcc pid.c -o p
+   54  ./p
+   55  ps
+   56  echo "exercicio 11"
+   57  sleep 1 &
+   58  ps -o pid,ppid,stat,comm | grep sleep
+   59  watch -n 0.1 'ps -o pid,ppid,stat,comm | grep sleep'
+   60  sleep 5 &
+   61  hto
+   62  htop
+   63  watch -n 0.1 'ps -o pid,ppid,stat,comm | grep sleep'
+   64  sleep 1 &
+   65  htop
+   66  sleep 10 &
+   67  htop
+   68  sleep 10 &
+   69  htop
+   70  sleep 1 &
+   71  ps -o pid,ppid,stat,comm | grep sleep
+   72  sleep 1 &
+   73  ps -o pid,ppid,stat,comm | grep sleep
+   74  sleep 1 &
+   75  ps -o pid,ppid,stat,comm | grep sleep
+   76  sleep 1 &
+   77  ps -o pid,ppid,stat,comm | grep sleep
+   78  sleep 1 &
+   79  ps -o pid,ppid,stat,comm | grep sleep
+   80  sleep 1 &
+   81  ps -o pid,ppid,stat,comm | grep sleep
+   82  sleep 1 &
+   83  ps -o pid,ppid,stat,comm | grep sleep
+   84  sleep 1 &
+   85  ps -o pid,ppid,stat,comm | grep sleep
+   86  history > meus-comandos-thays.txt
