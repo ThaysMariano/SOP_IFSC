@@ -137,7 +137,7 @@ static int cmd_help(int argc, char *argv[]);  /* imprimir lista de comandos */
 
 static struct command commands[] = {
     {"help",  cmd_help,   "Mostra esta ajuda (a ser implementada)"},
-    {"cwd",   cmd_cwd,    "Imprime diretório atual"},
+    {"cwd",   cmd_cwd,    "Imprime diretório atual"}, //FEITO
     {"cd",    cmd_cd,     "Muda diretório atual: cd <dir>"},
     {"mkdir", cmd_mkdir_, "Cria diretório: mkdir <nome> [modo_oct]"},
     {"rmdir", cmd_rmdir_, "Remove diretório: rmdir <nome>"}, //FEITO
@@ -185,10 +185,15 @@ static int cmd_help(int argc, char *argv[]) {
 }
 
 static int cmd_cwd(int argc, char *argv[]) {
-    (void)argc;
-    (void)argv;
     /* TODO: usar getcwd e imprimir diretório atual */
-    fprintf(stderr, "cwd: não implementado.\n");
+ 	char *buf;
+ 	int tam = 2048;
+ 	char *resposta;
+ 	resposta = getcwd(buf, tam);
+ 	fprintf(stderr, resposta);
+ 	fprintf(stderr, "\n");
+ 	
+    //fprintf(stderr, "cwd: não implementado.\n");
     errno = ENOSYS;
     return 1;
 }
