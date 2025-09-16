@@ -194,16 +194,25 @@ static int cmd_cwd(int argc, char *argv[]) {
  	fprintf(stderr, "\n");
  	
     //fprintf(stderr, "cwd: não implementado.\n");
-    errno = ENOSYS;
+    //errno = ENOSYS;
     return 1;
 }
 
 static int cmd_cd(int argc, char *argv[]) {
     /* TODO: validar argc e chamar chdir(argv[1]) */
-    (void)argc;
-    (void)argv;
-    fprintf(stderr, "cd: não implementado. uso: cd <dir>\n");
-    errno = ENOSYS;
+    if(argv[1]==NULL || argc != 2){
+     errno = ENOSYS;
+    }else if(chdir(argv[1])==0){
+    	chdir(argv[1]);
+    	printf("Diretorio alterado com sucesso \n");
+    	//fputs(argv[1], stdout);
+    	//fputs(">", stdout);
+    }else{
+    	printf("nao foi possivel trocar para esse diretorio! \n");
+    }
+  
+    //fprintf(stderr, "cd: não implementado. uso: cd <dir>\n");
+    
     return 2;
 }
 
